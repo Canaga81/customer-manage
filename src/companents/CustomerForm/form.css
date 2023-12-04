@@ -1,0 +1,21 @@
+.customer-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-input {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    border: 2px solid #000;
+    padding-left: 10px;
+    text-transform: capitalize;
+    border-radius: 6px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+}
+
+.customer-input:focus {
+    border: 2px solid rgb(37, 238, 37);
+}
