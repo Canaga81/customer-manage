@@ -1,33 +1,42 @@
-import React from 'react'
+import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
-import '../CustomerList/list.css'
+import "../CustomerList/list.css";
+import styled from "styled-components";
 
-const CustomerItem = ({customer, deleteHandler}) => {
-    
-    return (
+const DeleteBtn = styled.button`
+  padding: 8px 12px;
+  background-color: red;
+  transition: all 0.126s ease-in;
 
-        <>
+  & :hover {
+    opacity: 0.75;
+  }
+`;
 
-            <li className='customer-item'>
+const CustomerItem = ({ customer, deleteHandler }) => {
+  return (
+    <>
+      <li className="customer-item">
+        <div className="customer-info">
+          <div className="customer-image">
+            <img
+              src="https://i.pravatar.cc/300"
+              alt=""
+              className="customer-avatar"
+            />
+          </div>
+          <span className="customer-name">{customer.customerName}</span>
+        </div>
 
-                <div className='customer-info'>
+        <DeleteBtn
+          onClick={() => deleteHandler(customer)}
+          className="customer-trash_btn"
+        >
+          <FaTrashAlt />
+        </DeleteBtn>
+      </li>
+    </>
+  );
+};
 
-                    <div className="customer-image">
-                        <img src="https://i.pravatar.cc/300" alt="" className='customer-avatar' />
-                    </div>
-                    <span className='customer-name'>{customer.customerName}</span>
-
-                </div>
-
-                <button onClick={() => deleteHandler(customer)} className='customer-trash_btn'>
-                    <FaTrashAlt />
-                </button>
-
-            </li>
-
-        </>
-
-    )
-}
-
-export default CustomerItem
+export default CustomerItem;
